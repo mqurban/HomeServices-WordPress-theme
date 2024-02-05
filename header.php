@@ -15,21 +15,11 @@
 
   <title>Home Services Theme</title>
 
-  <!-- slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-  <!-- font awesome style -->
-  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
-
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
 
 </head>
 
 <body>
+
   <div class="hero_area">
     <!-- header section strats -->
     <header class="header_section">
@@ -39,13 +29,19 @@
             <a href="">
               <i class="fa fa-phone" aria-hidden="true"></i>
               <span>
-                Call : +01 123455678990
+                <?php
+                $phone_number = get_option('phone_number');
+                echo esc_html($phone_number);
+                ?>
               </span>
             </a>
             <a href="">
               <i class="fa fa-envelope" aria-hidden="true"></i>
               <span>
-                Email : demo@gmail.com
+                <?php 
+      $email_address = get_option('email_address');
+      echo antispambot(esc_html($email_address));
+                ?>
               </span>
             </a>
           </div>
@@ -56,7 +52,7 @@
           <nav class="navbar navbar-expand-lg custom_nav-container ">
             <a class="navbar-brand" href="index.html">
               <span>
-                Inance
+                <?php bloginfo('name');  ?>
               </span>
             </a>
 
@@ -66,18 +62,7 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ">
-                <li class="nav-item ">
-                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="about.html"> About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="service.html">Services</a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="contact.html">Contact Us</a>
-                </li>
+              <?php  wp_nav_menu( 'theme_location', 'myheadermenu'); ?>
               </ul>
             </div>
           </nav>

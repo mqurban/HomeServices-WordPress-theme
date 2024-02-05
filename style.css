@@ -6,3 +6,23 @@ Author: Muhammad Qurban
 
 */
 
+body{
+    margin-top: -7vh !important;
+}
+
+#menu-menu-1{
+    display: flex;
+    list-style: none;
+}
+#menu-menu-1 a{
+    margin-right: 20px;
+}
+#menu-menu-1 a:hover{
+    text-decoration: none;
+    color: red;
+}
+
+#slider_div img{
+ width: 100%;
+ height: 80vh;
+}
